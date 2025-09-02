@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Pernak-Pernik Vintage - Aneka Gaun</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>👗 Toko Vintage Chic - Aneka Gaun 👗</h1>
+        <p>Elegan dengan sentuhan vintage modern</p>
+    </header>
 
+    <div class="dress-container" id="dressDisplay"></div>
+
+    <footer>
+        &copy; 2025 Toko Pernak-Pernik Vintage. Semua Hak Dilindungi.
+    </footer>
+
+<script>
+    const dresses = [
+        {name: 'Gaun Mawar Emas', img: 'https://i.ibb.co/ZTpw1db/gown1.jpg', tag: 'Best Seller'},
+        {name: 'Gaun Vintage Pink', img: 'https://i.ibb.co/tMTs2xV/gown2.jpg', tag: 'Baru'},
+        {name: 'Gaun Cream Elegan', img: 'https://i.ibb.co/NtQzGQH/gown3.jpg', tag: 'Limited'},
+        {name: 'Gaun Pesta Mewah', img: 'https://i.ibb.co/mHr2MMt/gown4.jpg', tag: 'Exclusive'}
+    ];
+
+    const dressDisplay = document.getElementById('dressDisplay');
+
+    dresses.forEach(dress => {
+        const card = document.createElement('div');
+        card.className = 'dress-card';
+
+        const ribbon = document.createElement('div');
+        ribbon.className = 'gold-ribbon';
+        ribbon.textContent = dress.tag;
+
+        const flower = document.createElement('div');
+        flower.className = 'flower-decor';
+
+        const img = document.createElement('img');
+        img.src = dress.img;
+        img.alt = dress.name;
+
+        const info = document.createElement('div');
+        info.className = 'info';
+        const title = document.createElement('h3');
+        title.textContent = dress.name;
+
+        info.appendChild(title);
+        card.appendChild(ribbon);
+        card.appendChild(img);
+        card.appendChild(flower);
+        card.appendChild(info);
+
+        dressDisplay.appendChild(card);
+    });
+</script>
+</body>
+</html>
